@@ -9,10 +9,13 @@ import (
 )
 
 type Handler struct {
+	User UserHandler
 }
 
 func NewHandler(service service.Service, logger *zap.Logger) *Handler {
-	return &Handler{}
+	return &Handler{
+		User: NewUserHandler(service.User, logger),
+	}
 }
 
 func responseOK(c *gin.Context, data interface{}, description string) {

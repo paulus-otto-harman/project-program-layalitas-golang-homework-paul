@@ -17,7 +17,6 @@ type ServiceContext struct {
 }
 
 func NewServiceContext(migrateDb bool, seedDb bool) (*ServiceContext, error) {
-
 	handlerError := func(err error) (*ServiceContext, error) {
 		return nil, err
 	}

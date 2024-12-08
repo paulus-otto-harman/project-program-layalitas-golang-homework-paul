@@ -33,7 +33,7 @@ func LoadConfig(migrateDb bool, seedDb bool) (Config, error) {
 
 	viper.SetDefault("DB_MIGRATE", migrateDb)
 	viper.SetDefault("DB_SEEDING", seedDb)
-	
+
 	// Allow Viper to read environment variables
 	viper.AutomaticEnv()
 

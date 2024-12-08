@@ -2,7 +2,7 @@ package database
 
 import (
 	"gorm.io/gorm"
-	//"homework/domain"
+	"homework/domain"
 )
 
 func Migrate(db *gorm.DB) error {
@@ -16,7 +16,9 @@ func Migrate(db *gorm.DB) error {
 		return err
 	}
 
-	err = db.AutoMigrate()
+	err = db.AutoMigrate(
+		&domain.User{},
+	)
 
 	return err
 }
